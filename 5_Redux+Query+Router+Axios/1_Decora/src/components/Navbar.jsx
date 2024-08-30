@@ -6,12 +6,12 @@ import NavLinks from "./NavLinks";
 
 
 const themes = {
-    winter: "winter",
-    dracula: "dracula"
+    light: "light",
+    dark: "dark"
 };
 
 const getThemeFromLocalStorage = () => {
-    return localStorage.getItem("theme") || themes.winter;
+    return localStorage.getItem("theme") || themes.light;
 };
 
 const Navbar = () => {
@@ -19,8 +19,8 @@ const Navbar = () => {
 
 
     const handleTheme = () => {
-        const { dracula, winter } = themes;
-        const newTheme = theme === winter ? dracula : winter;
+        const { dark, light } = themes;
+        const newTheme = theme === light ? dark : light;
         setTheme(newTheme);
     };
 

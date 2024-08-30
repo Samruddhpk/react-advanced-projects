@@ -13,7 +13,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <p className="mt-6 text-lg leading-8 max-w-2xl mx-auto">
+            <p className="mt-8 text-lg leading-8 max-w-2xl mx-auto text-justify">
                 Decora is your ultimate destination for stylish and modern furniture that transforms any space into a home. We blend functionality with contemporary design to bring you pieces that are as comfortable as they are beautiful. Discover a curated selection of furniture that elevates your living experience, all in one seamless shopping journey.
             </p>
         </>
