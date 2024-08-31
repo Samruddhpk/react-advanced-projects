@@ -20,11 +20,11 @@ const Cart = () => {
                 <div className='lg:col-span-4 lg:pl-4'>
                     <CartTotals />
                     {user ? (
-                        <Link to='/checkout' className='btn btn-primary btn-block mt-8'>
+                        <Link to='/checkout' className='btn btn-primary btn-block mt-8 capitalize'>
                             proceed to checkout
                         </Link>
                     ) : (
-                        <Link to='/login' className='btn btn-primary btn-block mt-8'>
+                        <Link to='/login' className='btn btn-primary btn-block mt-8 capitalize'>
                             please login
                         </Link>
                     )}
