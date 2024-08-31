@@ -1,36 +1,21 @@
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { BsCart3, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../features/user/userSlice";
+
 import NavLinks from "./NavLinks";
 
 
-const themes = {
-    light: "light",
-    dark: "dark"
-};
-
-const getThemeFromLocalStorage = () => {
-    return localStorage.getItem("theme") || themes.light;
-};
 
 const Navbar = () => {
-    const [theme, setTheme] = useState(getThemeFromLocalStorage());
-    const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
 
+    const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
+    const dispatch = useDispatch();
 
     const handleTheme = () => {
-        const { dark, light } = themes;
-        const newTheme = theme === light ? dark : light;
-        setTheme(newTheme);
+        dispatch(toggleTheme());
     };
-
-
-    useEffect(() => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem("theme", theme);
-    }, [theme]);
 
     return (
         <nav className='bg-base-200'>
@@ -56,7 +41,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='navbar-center hidden lg:flex'>
+                <div className='xs:hidden sm:hidden lg:flex   navbar-center '>
                     <ul className='menu menu-horizontal flex gap-x-4'>
                         <NavLinks />
                     </ul>
