@@ -24,7 +24,7 @@ const Navbar = () => {
                     {/* TITLE */}
                     <NavLink
                         to='/'
-                        className='hidden lg:flex btn btn-primary text-3xl items-center'
+                        className='xs:hidden sm:hidden lg:flex btn btn-primary text-3xl items-center'
                     >
                         D
                     </NavLink>
